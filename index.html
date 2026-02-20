@@ -9,12 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Payoo Bank</title>
 </head>
 
-<body>
-    <section class="w-[450px] mx-auto bg-base-200">
+<body class="bg-">
+    <section class="w-[450px] min-h-screen mx-auto bg-base-200">
         <div class="pt-10 mx-auto w-[200px]">
             <img  src="assets/Logo-full.png" alt="" >
         </div>
@@ -22,15 +23,16 @@
             <div class="card-body">
                 <fieldset class="fieldset">
                     <label class="label text-neutral font-bold">Mobile Number</label>
-                    <input maxlength="11" minlength="11" type="number" class="input  bg-base-200 rounded-full  focus:border-none " placeholder="Type 11 digit number" />
+                    <input id="inputNumber" maxlength="11" minlength="11" type="number" class="input  bg-base-200 rounded-full  focus:border-none " placeholder="Type 11 digit number" />
                     <label class="label text-neutral font-bold">4 digit pin</label>
-                    <input maxlength="4" minlength="4" type="password" class="input bg-base-200 rounded-full focus:border-none" placeholder="Password" />
+                    <input id="inputPin" maxlength="4" minlength="4" type="password" class="input bg-base-200 rounded-full focus:border-none" placeholder="Password" />
                     <div><a class="link link-hover">Forgot password?</a></div>
-                    <button class="btn btn-primary mt-4 rounded-full">Login</button>
+                    <button id="btn-login" class="btn btn-primary mt-4 rounded-full">Login</button>
                 </fieldset>
             </div>
         </div>
     </section>
+    <script src="script/login.js"></script>
 </body>
 
 </html>
