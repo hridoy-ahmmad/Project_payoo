@@ -9,8 +9,8 @@ document.getElementById('btn-login')
         //3: match those things
         if(number == '01721132610' && pin == '1234'){
             //3-1: true> go to home 
-            alert('Login Successful')
             window.location.assign('/Pages/home.html')
+            alert('Login Successful')
         }
          else {
              //3-2: false> return
