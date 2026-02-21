@@ -45,71 +45,122 @@
     </section>
     <!-- ========================= -->
 
-    <section class="grid grid-cols-3 w-11/12 mx-auto gap-4 py-5"> 
-        <div class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+    <section class="grid grid-cols-3 w-11/12 mx-auto gap-4 py-5">
+        <div onclick="showElementById('addMoney')" id="addMoneyTop"
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-1.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Add Money</p>
         </div>
-        <div id="cashoutBtn" class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+        <div onclick="showElementById('cashOut')" id="cashoutBtn"
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-2.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Cashout</p>
         </div>
-        <div class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+        <div
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-3.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Transfer Money</p>
         </div>
-        <div class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+        <div
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-4.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Get Bonus</p>
         </div>
-        <div class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+        <div
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-5.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Pay Bill</p>
         </div>
-        <div class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
+        <div
+            class="flex flex-col items-center gap-2 border-1 p-5 border-black/20 rounded-2xl cursor-pointer hover:bg-black/5">
             <div>
                 <img src="/assets/opt-6.png" alt="">
             </div>
             <p class="text-neutral/70 text-sm">Transactions</p>
         </div>
     </section>
+    <!-- ------Add money------- -->
+    <section class='bg-base-200 py-5 ' id="addMoney">
+        <div class="mx-auto w-11/12">
+            <h2 class="text-neutral font-bold">Add Money</h2>
+            <div class="card bg-base-100 w-full mx-auto shadow rounded-2xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
 
+                        <label class="label text-neutral font-bold">Select a Bank</label>
+                        <select id="selectBank" class="select bg-base-200 rounded-full focus:border-none w-full">
+                            <option disabled selected>Select Bank</option>
+                            <option value="DBBL">DBBL</option>
+                            <option value="IBBL">IBBL</option>
+                            <option value="City Bank">City Bank</option>
+                        </select>
 
-    <!-- +++++++++++++++++++++++++ -->
+                        <br>
 
-    <section class='bg-base-200 py-5' id="cashOut">
+                        <label class="label text-neutral font-bold">Bank account Number</label>
+                        <input id="addMoneyNumber" maxlength="11" minlength="11" type="number"
+                            class="input  bg-base-200 rounded-full  focus:border-none w-full"
+                            placeholder="Type 11 digit number" />
+                        <br>
+
+                        <label class="label text-neutral font-bold">Amount to add</label>
+                        <input id="inputAddAmount" type="number"
+                            class="input  bg-base-200 rounded-full  focus:border-none w-full"
+                            placeholder="type add money amount" />
+                        <br>
+                        <label class="label text-neutral font-bold">4 digit pin</label>
+                        <input id="inputPin" maxlength="4" minlength="4" type="password"
+                            class="input bg-base-200 rounded-full focus:border-none w-full" placeholder="Password" />
+
+                        <div><a class="link link-hover">Forgot password?</a></div>
+                        <button id="btnAddmoney" class="btn btn-primary mt-4 rounded-full">Add money</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ++++++++++++Cash Out+++++++++++++ -->
+
+    <section class='bg-base-200 py-5 hidden' id="cashOut">
         <div class="mx-auto w-11/12">
             <h2 class="text-neutral font-bold">Cash Out</h2>
             <div class="card bg-base-100 w-full mx-auto shadow rounded-2xl">
-            <div class="card-body">
-                <fieldset class="fieldset">
-                    <label class="label text-neutral font-bold">Mobile Number</label>
-                    <input id="inputNumber" maxlength="11" minlength="11" type="number" class="input  bg-base-200 rounded-full  focus:border-none w-full" placeholder="Type 11 digit number" />
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-neutral font-bold">Mobile Number</label>
+                        <input id="inputNumber" maxlength="11" minlength="11" type="number"
+                            class="input  bg-base-200 rounded-full  focus:border-none w-full"
+                            placeholder="Type 11 digit number" />
 
-                    <label class="label text-neutral font-bold">Amount</label>
-                    <input id="inputAmount"  type="number" class="input  bg-base-200 rounded-full  focus:border-none w-full" placeholder="Type 11 digit number" />
+                        <label class="label text-neutral font-bold">Amount</label>
+                        <input id="inputAmount" type="number"
+                            class="input  bg-base-200 rounded-full  focus:border-none w-full"
+                            placeholder="Type 11 digit number" />
 
-                    <label class="label text-neutral font-bold">4 digit pin</label>
-                    <input id="inputPin" maxlength="4" minlength="4" type="password" class="input bg-base-200 rounded-full focus:border-none w-full" placeholder="Password" />
+                        <label class="label text-neutral font-bold">4 digit pin</label>
+                        <input id="inputPin" maxlength="4" minlength="4" type="password"
+                            class="input bg-base-200 rounded-full focus:border-none w-full" placeholder="Password" />
 
-                    <div><a class="link link-hover">Forgot password?</a></div>
-                    <button id="btn-withdraw" class="btn btn-primary mt-4 rounded-full">Withdraw</button>
-                </fieldset>
+                        <div><a class="link link-hover">Forgot password?</a></div>
+                        <button id="btn-withdraw" class="btn btn-primary mt-4 rounded-full">Withdraw</button>
+                    </fieldset>
+                </div>
             </div>
-        </div>
         </div>
     </section>
     <script src="/script/machine.js"></script>
+    <script src="/script/addMoney.js"></script>
     <script src="/script/cashout.js"></script>
     <script src="script/login.js"></script>
 </body>

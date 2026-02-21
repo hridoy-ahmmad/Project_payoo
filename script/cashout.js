@@ -8,9 +8,8 @@ document.getElementById('btn-withdraw')
         }
         // 2. get the amount and calculate
         const amount = getValueFromInput('inputAmount')
-        const balance = document.getElementById('balance')
-        const balanceValue = balance.innerText
-        const newBalance = Number(balanceValue) - Number(amount)
+        const balanceCurrent = getBalance()
+        const newBalance = balanceCurrent - Number(amount)
         if (newBalance < 0) {
             alert('Invalid Balance')
             return;
@@ -22,12 +21,8 @@ document.getElementById('btn-withdraw')
             alert('invalid pin')
             return;
         }
-        balance.innerText = newBalance
+        setBalance(newBalance)
         alert('Cash out sucessful')
-
-
-
-
     })
 
 
